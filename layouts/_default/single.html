@@ -1,0 +1,29 @@
+{{ define "main" }}
+  <article class="post">
+    <header class="post-header">
+      <h1 class ="post-title">{{ .Title }}</h1>
+      <div class="post-meta">
+        <div>
+          {{ partial "icon.html" "calendar" }}
+          {{ .PublishDate.Format "Jan 2, 2006" }}
+        </div>
+        <div>
+          {{ partial "icon.html" "clock" }}
+          {{ .ReadingTime }} min read
+        </div>
+        <div>
+          {{ partial "icon.html" "tag" }}
+          {{ range .Param "tags" -}}
+            {{- $name := . -}}
+            {{- with $.Site.GetPage (printf "/%s/%s" "tags" $name) -}}
+              <a class="tag" href="{{ .Permalink }}">{{ $name }}</a>
+            {{- end -}}
+          {{- end -}}
+        </div>
+      </div>
+    </header>
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+  </article>
+{{ end }}

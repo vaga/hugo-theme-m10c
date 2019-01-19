@@ -1,0 +1,30 @@
+baseURL = "https://example.com"
+title = "Your title"
+themesDir = "../.."
+theme = "m10c"
+
+[params]
+  author = "John Doe"
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium."
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/gohugoio"
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/gohugoio"
+
+  # Green theme
+  #[params.style]
+  #  darkestColor = "#315659"
+  #  darkColor = "#253031"
+  #  primaryColor = "#dad865"
+  #  lightColor = "#96a879"
+  #  lightestColor = "#fff"
+
+  # Red and black theme
+  #[params.style]
+  #  darkestColor = "#d35050"
+  #  darkColor = "#212121"
+  #  primaryColor = "#ffffff"
+  #  lightColor = "#a2a2a2"
+  #  lightestColor = "#d3d3d3"
