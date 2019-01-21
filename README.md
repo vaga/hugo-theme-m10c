@@ -1,6 +1,6 @@
 # m10c theme
 
-![Intro](images/intro.png)
+![Intro](https://github.com/vaga/hugo-theme-m10c/blob/master/images/cover.png)
 
 A Hugo minimalistic theme for bloggers
 
