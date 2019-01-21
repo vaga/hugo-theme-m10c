@@ -27,10 +27,12 @@ theme = "m10c"
 ### Configuration
 
 In your `config.toml` file, define the following variables in `params`:
+
 - `author`: Name of the author
 - `description`: Short description of the author
 
 To add a social link, add the following lines in `params`:
+
 ```
 [[params.social]]
   name = "github"
@@ -38,6 +40,7 @@ To add a social link, add the following lines in `params`:
 ```
 
 To change theme colors, add the following lines in `params`:
+
 ```
 [params.style]
   darkestColor = "#d35050"
@@ -46,6 +49,7 @@ To change theme colors, add the following lines in `params`:
   lightestColor = "#f5f5f5"
   primaryColor = "#fff"
 ```
+
 If you want the above theme colors, you can see the [exampleSite/config.toml](/exampleSite/config.toml) file.
 
 ## License
