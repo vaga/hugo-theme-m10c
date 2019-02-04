@@ -59,7 +59,7 @@ pre {
   color: $lightest-color;
 
   a {
-    margin: 0 .1em;
+    margin: 0 0.1em;
   }
 }
 
@@ -67,14 +67,17 @@ pre {
   display: block-inline;
   width: 1em;
   height: 1em;
-  vertical-align: -.125em;
+  vertical-align: -0.125em;
 }
 
 .tag {
-  background: rgba(255, 255, 255, 0.1);
-  margin: 0 0.2em;
-  padding: 0.2em 0.4em;
+  display: inline-block;
+  margin-right: 0.2em;
+  padding: 0 0.6em;
+  font-size: 0.9em;
   border-radius: 0.2em;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.1);
   transition: background 0.8s;
 
   &:hover {
