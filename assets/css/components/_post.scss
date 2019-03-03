@@ -1,0 +1,14 @@
+.post-title {
+  color: $lightest-color;
+}
+
+.post-content {
+  pre {
+    border-left: 0.4em solid rgba($primary-color, .8);
+    padding-left: 1em;
+  }
+}
+
+.post-meta {
+  font-size: 0.8em;
+}

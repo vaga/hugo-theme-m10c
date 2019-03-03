@@ -1,0 +1,15 @@
+.posts-list {
+  padding: 0;
+}
+
+.posts-list-item {
+  list-style: none;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  padding: 0.4em 0;
+}
+
+.posts-list-item-description {
+  display: block;
+  font-size: 0.8em;
+}
+

@@ -1,0 +1,14 @@
+.tag {
+  display: inline-block;
+  margin-right: 0.2em;
+  padding: 0 0.6em;
+  font-size: 0.9em;
+  border-radius: 0.2em;
+  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.1);
+  transition: background 0.8s;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}

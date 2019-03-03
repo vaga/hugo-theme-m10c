@@ -1,0 +1,33 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  line-height: 1.6;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: $dark-color;
+  color: $light-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: $lightest-color;
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+
+  &:hover {
+    color: $lightest-color;
+    transition: color 0.8s;
+  }
+}
+
+pre {
+  overflow: auto;
+}
+

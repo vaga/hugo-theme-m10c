@@ -1,0 +1,40 @@
+.app-header {
+  padding: 2.5em;
+  background: $darkest-color;
+  text-align: center;
+}
+
+.app-header-avatar {
+  max-width: 15rem;
+  max-height: 15rem;
+  border-radius: 100%;
+  border: 0.5rem solid $primary-color;
+}
+
+.app-container {
+  padding: 2.5rem;
+}
+
+.app-header-social {
+  font-size: 2em;
+  color: $lightest-color;
+
+  a {
+    margin: 0 0.1em;
+  }
+}
+
+@media (min-width: 940px) {
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    min-height: 100vh;
+  }
+
+  .app-container {
+    max-width: 65rem;
+    margin-left: 20rem;
+  }
+}
