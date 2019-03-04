@@ -1,0 +1,27 @@
+{{ with $.Paginator }}
+{{ if gt .TotalPages 1 }}
+<ul class="pagination">
+  {{ with .Prev }}
+  <li class="page-item">
+    <a class="page-link" href="{{ .URL }}">
+      {{ partial "icon.html" (dict "ctx" $ "name" "arrow-left") }}
+    </a>
+  </li>
+  {{ end }}
+  {{ range .Pagers }}
+  <li class="page-item{{ if eq .PageNumber $.Paginator.PageNumber }} active{{ end }}">
+    <a class="page-link" href="{{ .URL }}">
+      {{ .PageNumber }}
+    </a>
+  </li>
+  {{ end }}
+  {{ with .Next }}
+  <li class="page-item">
+    <a class="page-link" href="{{ .URL }}">
+      {{ partial "icon.html" (dict "ctx" $ "name" "arrow-right") }}
+    </a>
+  </li>
+  {{ end }}
+</ul>
+{{ end }}
+{{ end }}
