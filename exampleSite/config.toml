@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 title = "Your title"
 themesDir = "../.."
-theme = "hugo-theme-m10c"
+theme = "m10c"
 paginate = 5
 
 [params]
