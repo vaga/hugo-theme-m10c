@@ -8,7 +8,8 @@ $primary-color: {{ .Site.Params.style.primaryColor | default "#57cc8a" }};
 
 @import 'components/app';
 @import 'components/icon';
-@import 'components/tag';
+@import 'components/pagination';
 @import 'components/post';
 @import 'components/posts_list';
+@import 'components/tag';
 
