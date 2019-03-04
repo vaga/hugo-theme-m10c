@@ -1,0 +1,12 @@
+.error-404 {
+  text-align: center;
+
+  & > .icon {
+    width: 10em;
+    height: 10em;
+  }
+}
+
+.error-404-title {
+  text-transform: uppercase;
+}
