@@ -1,7 +1,7 @@
 baseURL = "https://example.com"
 title = "Your title"
 themesDir = "../.."
-theme = "m10c"
+theme = "hugo-theme-m10c"
 paginate = 5
 
 [params]
@@ -13,6 +13,14 @@ paginate = 5
   [[params.social]]
     name = "twitter"
     url = "https://twitter.com/gohugoio"
+
+  # Brown theme
+  #[params.style]
+  #  darkestColor = "#463625"
+  #  darkColor = "#2a3738"
+  #  primaryColor = "#eeee6a"
+  #  lightColor = "#96a879"
+  #  lightestColor = "#ffffff"
 
   # Green theme
   #[params.style]
