@@ -9,16 +9,21 @@ html {
 body {
   margin: 0;
   font-family: sans-serif;
-  background: $dark-color;
-  color: $light-color;
+  background: $darkest-color;
+  color: $primary-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
+//h1 {
+//  color: $lightest-color;
+//  font-size: 36px;
+//}
+   
+h1,h2, h3, h4, h5, h6 {
   color: $lightest-color;
 }
 
 a {
-  color: $primary-color;
+  color: $light-color;
   text-decoration: none;
 
   &:hover {
