@@ -1,0 +1,4 @@
+[submodule "themes/m10c"]
+	path = themes/m10c
+	url = git@github.com:maxnystrom/hugo-blog
+	branch = master
