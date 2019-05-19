@@ -9,6 +9,7 @@
   transition: background 0.8s;
 
   &:hover {
+    transition: color 0.8s;
     background: rgba(255, 255, 255, 0.3);
   }
 }
