@@ -46,3 +46,9 @@ pre {
   overflow: auto;
 }
 
+::selection {
+  background: rgba($light-color, .25);
+}
+::-moz-selection {
+  background: rgba($light-color, .25);
+}
