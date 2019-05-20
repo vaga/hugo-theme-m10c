@@ -4,7 +4,9 @@
 
 .posts-list-item {
   list-style: none;
-  border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  &:not(:last-child) {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  }
   padding: 0.4em 0;
 }
 
