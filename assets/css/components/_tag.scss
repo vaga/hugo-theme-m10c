@@ -6,10 +6,10 @@
   border-radius: 0.2em;
   white-space: nowrap;
   background: rgba(255, 255, 255, 0.1);
-  transition: color 0.8s, background 0.8s;
+  transition: color 0.35s, background 0.35s;
 
   &:hover {
-    transition: color 0.8s;
+    transition: color 0.25s, background 0.05s;
     background: rgba(255, 255, 255, 0.3);
   }
 }
