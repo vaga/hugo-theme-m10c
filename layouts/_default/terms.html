@@ -1,0 +1,16 @@
+{{ define "main" }}
+  <article>
+    <h1>{{ .Title }}</h1>
+    <ul class="posts-list">
+      {{ range .Data.Terms.Alphabetical }}
+        <li class="posts-list-item">
+            <a class="posts-list-item-title" href="{{ .Page.Permalink }}">
+              {{ .Page.Title }}
+            </a> 
+            {{ .Count }}
+        </li>
+      {{ end }}
+    </ul>
+    {{ partial "pagination.html" $ }}
+  </article>
+{{ end }}
