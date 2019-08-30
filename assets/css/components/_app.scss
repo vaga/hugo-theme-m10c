@@ -15,6 +15,14 @@
   padding: 2.5rem;
 }
 
+.app-header-categories {
+  ul {
+    padding: 2.5em;
+    text-align: center;
+    list-style-type: none;
+  }
+}
+
 .app-header-social {
   font-size: 2em;
   color: $lightest-color;
