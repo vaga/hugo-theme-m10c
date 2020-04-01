@@ -53,6 +53,15 @@ To change theme colors, add the following lines in `params`:
 
 If you want the above theme colors, you can see the [exampleSite/config.toml](/exampleSite/config.toml) file.
 
+To use [utterances](https://utteranc.es/) for comments; follow their instructions for creating a repo and installing the utterances app, then add the following lines in `params`:
+
+```
+[params.utterances]
+  repo = "iJebus/blog-comments"
+  issue_term = "pathname"
+  theme = "github-dark-orange"
+```
+
 ## License
 
 This theme is released under the [**MIT**](/LICENSE.md) License.
