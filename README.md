@@ -53,10 +53,16 @@ To change theme colors, add the following lines in `params`:
 
 If you want the above theme colors, you can see the [exampleSite/config.toml](/exampleSite/config.toml) file.
 
+### Styling
+
+To override styles using scss, add a file called `_extra.scss` to `{your site directory}/assets/css/`
+
+Note: Hugo releases come in two versions, `hugo` and `hugo_extended`. You need `hugo_extended` to automatically compile your scss.
+
 ## License
 
 This theme is released under the [**MIT**](/LICENSE.md) License.
 
-## Aknowledgements
+## Acknowledgements
 
 - [feather](https://feathericons.com/) - [MIT](https://github.com/feathericons/feather/blob/master/LICENSE)
