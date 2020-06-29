@@ -1,0 +1,28 @@
+.tags-list {
+  padding: 0;
+}
+
+.tags-list-item {
+  list-style: none;
+  padding: 0.4em 0;
+  &:not(:last-child) {
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
+  }
+}
+
+@media (min-width: 450px) {
+  .tags-list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .tags-list-item {
+    width: calc(50% - 1em);
+    &:nth-child(even) {
+      margin-left: 1em;
+    }
+    &:nth-last-child(2) {
+      border: none;
+    }
+  }
+}
