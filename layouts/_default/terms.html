@@ -1,16 +1,16 @@
 {{ define "main" }}
   <article>
     <h1>{{ .Title }}</h1>
-    <ul class="posts-list">
-      {{ range .Data.Terms.Alphabetical }}
-        <li class="posts-list-item">
-            <a class="posts-list-item-title" href="{{ .Page.Permalink }}">
+    <ul class="tags-list">
+      {{ range .Data.Terms.ByCount }}
+        <li class="tags-list-item">
+            {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+            <a class="tags-list-item-title" href="{{ .Page.Permalink }}">
+              ({{ .Count }})
               {{ .Page.Title }}
-            </a> 
-            {{ .Count }}
+            </a>
         </li>
       {{ end }}
     </ul>
-    {{ partial "pagination.html" $ }}
   </article>
 {{ end }}

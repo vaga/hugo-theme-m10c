@@ -13,6 +13,7 @@ $primary-color: {{ .Site.Params.style.primaryColor | default "#57cc8a" }};
 @import 'components/post';
 @import 'components/posts_list';
 @import 'components/tag';
+@import 'components/tags_list';
 
 // The last 'extra' import can optionally be overridden on a per project
 // basis by creating a <HUGO_PROJECT>/assets/css/_extra.scss file.
