@@ -32,6 +32,17 @@ In your `config.toml` file, define the following variables in `params`:
 - `description`: Short description of the author
 - `avatar`: Path of file containing the author avatar image
 
+To add a menu item, add the following lines in `menu`:
+
+```
+[[menu.main]]
+  identifier = "tags"
+  name = "Tags"
+  url = "/tags/"
+```
+
+[Read Hugo documentations](https://gohugo.io/content-management/menus/#readout) for more informations about menu
+
 To add a social link, add the following lines in `params`:
 
 ```
