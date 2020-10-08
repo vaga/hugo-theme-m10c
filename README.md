@@ -31,6 +31,7 @@ In your `config.toml` file, define the following variables in `params`:
 - `author`: Name of the author
 - `description`: Short description of the author
 - `avatar`: Path of file containing the author avatar image
+- `menu_item_separator`: Separator between each menu item. HTML allowed (default: " - ")
 
 To add a menu item, add the following lines in `menu`:
 
