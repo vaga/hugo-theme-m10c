@@ -32,6 +32,7 @@ In your `config.toml` file, define the following variables in `params`:
 - `description`: Short description of the author
 - `avatar`: Path of file containing the author avatar image
 - `menu_item_separator`: Separator between each menu item. HTML allowed (default: " - ")
+- `favicon`: Absolute path of your favicon.ico file (default: "/favicon.ico")
 
 To add a menu item, add the following lines in `menu`:
 
