@@ -2,7 +2,7 @@
 <html lang="{{ .Site.LanguageCode | default "en-us" }}">
   <head>
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
-    <link rel="shortcut icon" href="{{ .Site.Params.favicon | default "favicon.ico" }}" />
+    <link rel="shortcut icon" href="{{ .Site.Params.favicon | default "/favicon.ico" }}" />
     <meta charset="utf-8" />
     {{ hugo.Generator }}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
