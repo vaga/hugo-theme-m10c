@@ -38,13 +38,17 @@ code {
 }
 
 pre {
+  font-size: 1rem;
+  line-height: 1.2em;
+  margin: 0;
+  overflow: auto;
+
   // A larger monospaced block of text (that isn't mixed with normal text)
   // generally looks heavier than normal text with the same font size. For this
   // reason using a smaller monospaced font size makes sense in this situation.
   code {
     font-size: .8em;
   }
-  overflow: auto;
 }
 
 ::selection {
