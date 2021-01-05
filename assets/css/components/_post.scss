@@ -3,10 +3,18 @@
 }
 
 .post-content {
-  pre {
-    border-left: 0.4em solid rgba($primary-color, .8);
-    padding-left: 1em;
+  & > pre,
+  .highlight {
+    margin: 1em 0;
   }
+
+  & > pre,
+  .highlight > pre,
+  .highlight > div {
+    border-left: 0.4em solid rgba($primary-color, .8);
+    padding: .5em 1em;
+  }
+
   img {
     max-width: 100%;
   }
