@@ -1,13 +1,13 @@
 {{ define "main" }}
   <article>
-    <h1>{{ .Title }}</h1>
+    <h1>Posts</h1>
     <ul class="posts-list">
       {{ range where .Paginator.Pages "Type" "!=" "page" }}
         <li class="posts-list-item">
           <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
           <span class="posts-list-item-description">
             {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
-            {{ .PublishDate.Format "Jan 2, 2006" }}
+            {{ .PublishDate.Format .Site.Params.date_format }}
             -
             {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
             {{ .ReadingTime }} min read

@@ -8,7 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
-    {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+    {{ $sass := resources.Get "css/main.scss" }}
+    {{ $style := $sass | resources.ToCSS }}
+    <!-- {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}} -->
     <link rel="stylesheet" href="{{ $style.Permalink }}" />
 
     {{ template "_internal/google_analytics.html" . }}
