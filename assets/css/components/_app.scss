@@ -24,6 +24,21 @@
   }
 }
 
+@media (min-width: 940px) {
+  .app-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 20rem;
+    min-height: 100vh;
+  }
+
+  .app-container {
+    max-width: 65rem;
+    margin-left: 20rem;
+  }
+}
+
 @media (max-width: 940px) {
   .app-header {
     padding: 0.5em;
