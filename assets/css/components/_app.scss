@@ -24,17 +24,31 @@
   }
 }
 
-@media (min-width: 940px) {
+@media (max-width: 940px) {
   .app-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 20rem;
-    min-height: 100vh;
+    padding: 0.5em;
+    min-height: 9rem;
+    width: 100%;
+
+    h2 {
+      font-size: large;
+    }
+
+    p {
+      clear: both;
+      text-align: left;
+    }
+  }
+
+  .app-header-avatar {
+    max-width: 8rem;
+    max-height: 8rem;
+    border-radius: 100%;
+    border: .25rem solid $primary-color;
+    float: left;
   }
 
   .app-container {
-    max-width: 65rem;
-    margin-left: 20rem;
+    padding: 0.5rem;
   }
 }
