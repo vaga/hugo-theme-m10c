@@ -18,7 +18,7 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
+      <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" height="240" width="240" /></a>
       <h1>{{ .Site.Title }}</h1>
       {{- with .Site.Menus.main }}
       <nav class="app-header-menu">
