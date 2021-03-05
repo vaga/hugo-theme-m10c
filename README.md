@@ -4,6 +4,17 @@
 
 A Hugo minimalistic theme for bloggers
 
+Main features:
+
+- Fully responsive
+- Twitter Cards, Open Graph, Disqus and Google Analytics supported (see Hugo docs)
+- Customizable colors
+- Customizable picture and description
+- Customizable menu on sidebar
+- Customizable social media links on sidebar
+- Optimized for performance 100/100 on Lighthouse
+- All feather icons included
+
 ## Getting started
 
 ### Installation
