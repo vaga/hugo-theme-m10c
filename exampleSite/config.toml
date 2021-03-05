@@ -19,10 +19,10 @@ paginate = 5
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium."
   menu_item_separator = " - "
   [[params.social]]
-    name = "github"
+    icon = "github"
     url = "https://github.com/gohugoio"
   [[params.social]]
-    name = "twitter"
+    icon = "twitter"
     url = "https://twitter.com/gohugoio"
 
   # Brown theme
