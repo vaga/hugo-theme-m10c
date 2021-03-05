@@ -49,7 +49,7 @@ To add a social link, add the following lines in `params`:
 
 ```
 [[params.social]]
-  name = "github"
+  icon = "github"
   url = "https://github.com/vaga"
 ```
 

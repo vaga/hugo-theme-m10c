@@ -31,11 +31,13 @@
       </nav>
       {{- end }}
       <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
+      {{- with .Site.Params.social }}
       <div class="app-header-social">
-        {{ range .Site.Params.social }}
-          <a target="_blank" href="{{ .url }}" rel="noreferrer noopener">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
+        {{ range . }}
+          <a href="{{ .url }}" target="_blank" rel="noreferrer noopener">{{ partial "icon.html" (dict "ctx" $ "name" .icon) }}</a>
         {{ end }}
       </div>
+      {{- end }}
     </header>
     <main class="app-container">
       {{ block "main" . }}
