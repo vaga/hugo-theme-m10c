@@ -20,9 +20,11 @@ paginate = 5
   menu_item_separator = " - "
   [[params.social]]
     icon = "github"
+    name = "Github"
     url = "https://github.com/gohugoio"
   [[params.social]]
     icon = "twitter"
+    name = "Twitter"
     url = "https://twitter.com/gohugoio"
 
   # Brown theme
