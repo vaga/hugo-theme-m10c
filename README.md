@@ -73,16 +73,16 @@ To change theme colors, add the following lines in `params`:
   darkColor = "#212121"
   lightColor = "#f5e3e0"
   lightestColor = "#f5f5f5"
-  primaryColor = "#fff"
+  primaryColor = "#ffffff"
 ```
 
 If you want the above theme colors, you can see the [exampleSite/config.toml](/exampleSite/config.toml) file.
 
 ### Styling
 
-To override styles using scss, add a file called `_extra.scss` to `{your site directory}/assets/css/`
+To override styles using scss, add a file called `_extra.scss` to `[path]/assets/css/`
 
-Note: Hugo releases come in two versions, `hugo` and `hugo_extended`. You need `hugo_extended` to automatically compile your scss.
+**Note:** Hugo releases come in two versions, `hugo` and `hugo_extended`. You need `hugo_extended` to automatically compile your scss.
 
 ## License
 
