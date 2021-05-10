@@ -12,6 +12,16 @@
           {{ partial "icon.html" (dict "ctx" $ "name" "clock") }} 
           {{ .ReadingTime }} min read
         </div>
+        {{- with .Params.categories }}
+        <div>
+          {{ partial "icon.html" (dict "ctx" $ "name" "folder") }} 
+          {{- range . -}}
+            {{ with $.Site.GetPage (printf "/%s/%s" "categories" . ) }}
+              <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+            {{- end }}
+          {{- end }}
+        </div>
+        {{- end }}
         {{- with .Params.tags }}
         <div>
           {{ partial "icon.html" (dict "ctx" $ "name" "tag") }} 
