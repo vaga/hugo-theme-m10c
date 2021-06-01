@@ -1,0 +1,37 @@
+{{ $original := .Page.Resources.GetMatch (.Get "src") }}
+{{ $alt := .Get "alt" }}
+
+{{ $tinyw := default "500x q50" }}
+{{ $smallw := default "800x q50" }}
+{{ $mediumw := default "1200x q50" }}
+
+{{ .Scratch.Set "tiny" ($original.Resize $tinyw) }}
+{{ .Scratch.Set "small" ($original.Resize $smallw) }}
+{{ .Scratch.Set "medium" ($original.Resize $mediumw) }}
+
+{{ $tiny := .Scratch.Get "tiny" }}
+{{ $small := .Scratch.Get "small" }}
+{{ $medium := .Scratch.Get "medium" }}
+{{ $large := .Scratch.Get "large" }}
+<a href={{$original.RelPermalink}}>
+<img
+  {{ with .Get "sizes" }}sizes='{{.}}'
+  {{ else }}
+  sizes="(min-width: 35em) 720px, 100vw"{{ end }}
+  srcset='
+  {{ if ge $original.Width "500" }}
+    {{ with $tiny.RelPermalink }}{{.}} 500w{{ end }}
+  {{ end }}
+  {{ if ge $original.Width "800" }}
+    {{ with $small.RelPermalink }}, {{.}} 800w{{ end }}
+  {{ end }}
+  {{ if ge $original.Width "1200" }}
+    {{ with $medium.RelPermalink }}, {{.}} 1200w{{ end }}
+  {{ end }}'
+  {{ if .Get (print $small) }}
+    src="{{ $small.RelPermalink }}"
+  {{ else }}
+    src="{{ $original.RelPermalink }}"
+  {{ end }}
+ alt="{{ $alt }}">
+</a>
