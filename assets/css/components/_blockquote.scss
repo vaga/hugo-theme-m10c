@@ -1,0 +1,12 @@
+blockquote {
+  border-left: 0.2em solid rgba($primary-color, 0.8);
+  padding: 0.5em 1em;
+  color: rgba($light-color, 0.8);
+  font-size: 1em;
+  margin: 10px 0;
+  background: $darkest-color;
+}
+
+blockquote p {
+  display: inline;
+}
