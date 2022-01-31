@@ -24,6 +24,14 @@
   }
 }
 
+.app-header-title {
+  color: $lightest-color;
+  display: block;
+  font-size: 2em;
+  margin: 0.67em 0;
+  font-weight: bold;
+}
+
 @media (min-width: 940px) {
   .app-header {
     position: fixed;
