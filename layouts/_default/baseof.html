@@ -30,7 +30,7 @@
         {{- end }}
       </nav>
       {{- end }}
-      <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
+      <p>{{ .Site.Params.description | default "" }}</p>
       {{- with .Site.Params.social }}
       <div class="app-header-social">
         {{ range . }}
