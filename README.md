@@ -82,7 +82,7 @@ If you want the above theme colors, you can see the [exampleSite/config.toml](/e
 
 In your markdown:
 ```md
-{{< img src="images/pgp-passphrase.png" alt="pgp passphrase">}}
+{{< img src="images/my-cool-picture.png" alt="my cool picture">}}
 ```
 ### Styling
 
