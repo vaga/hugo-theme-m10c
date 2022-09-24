@@ -4,6 +4,14 @@
   text-align: center;
 }
 
+.app-footer {
+  background: $darkest-color;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 .app-header-avatar {
   width: 15rem;
   height: 15rem;

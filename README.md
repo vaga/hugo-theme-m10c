@@ -78,6 +78,12 @@ To change theme colors, add the following lines in `params`:
 
 If you want the above theme colors, you can see the [exampleSite/config.toml](/exampleSite/config.toml) file.
 
+### Add Image in Post 
+
+In your markdown:
+```md
+{{< img src="images/pgp-passphrase.png" alt="pgp passphrase">}}
+```
 ### Styling
 
 To override styles using scss, add a file called `_extra.scss` to `[path]/assets/css/`
