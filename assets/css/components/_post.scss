@@ -12,7 +12,18 @@
   .highlight > pre,
   .highlight > div {
     border-left: 0.4em solid rgba($primary-color, .8);
+    padding: 1em 1em;
+  }
+
+  blockquote {
+    border-left: 0.4em solid rgba($primary-color, .8);
+    margin: 1em 0em;
     padding: .5em 1em;
+    background: $darkest-color;
+
+    p {
+      margin: .5em 0;
+    }
   }
 
   img {
