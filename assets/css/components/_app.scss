@@ -16,11 +16,14 @@
 }
 
 .app-header-social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 2em;
   color: $lightest-color;
 
-  a {
-    margin: 0 0.1em;
+  a:not(:last-child) {
+    margin-right: 0.4em;
   }
 }
 

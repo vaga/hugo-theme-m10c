@@ -12,6 +12,15 @@
 }
 
 .posts-list-item-description {
-  display: block;
+  display: flex;
+  align-items: center;
   font-size: 0.8em;
+
+  > .icon {
+    margin-right: 0.4em;
+  }
+}
+
+.posts-list-item-separator {
+  margin: 0 0.4em;
 }
