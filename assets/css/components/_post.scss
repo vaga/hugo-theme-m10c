@@ -2,6 +2,16 @@
   color: $lightest-color;
 }
 
+.post-meta > div {
+  display: flex;
+  align-items: center;
+  font-size: 0.8em;
+
+  > .icon {
+    margin-right: 0.4em;
+  }
+}
+
 .post-content {
   & > pre,
   .highlight {
@@ -29,8 +39,4 @@
   img {
     max-width: 100%;
   }
-}
-
-.post-meta {
-  font-size: 0.8em;
 }
