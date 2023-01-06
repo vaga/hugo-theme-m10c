@@ -35,6 +35,12 @@ code {
   font-family: monospace,monospace;
   font-size: 1em;
   color: rgba($light-color, .8);
+
+  // Fixes iOS font sizing anomaly
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 pre {
