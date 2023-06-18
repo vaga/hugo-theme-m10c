@@ -36,24 +36,24 @@ paginate = 8
 
   # Default theme
   #[params.style]
-  #  darkestColor = "#242930"
-  #  darkColor = "#353b43"
-  #  lightColor = "#afbac4"
-  #  lightestColor = "#ffffff"
-  #  primaryColor = "#57cc8a"
+  #  darkest_color = "#242930"
+  #  dark_color = "#353b43"
+  #  light_color = "#afbac4"
+  #  lightest_color = "#ffffff"
+  #  primary_color = "#57cc8a"
 
   # Green theme
   #[params.style]
-  #  darkestColor = "#315659"
-  #  darkColor = "#253031"
-  #  lightColor = "#96a879"
-  #  lightestColor = "#fff"
-  #  primaryColor = "#dad865"
+  #  darkest_color = "#315659"
+  #  dark_color = "#253031"
+  #  light_color = "#96a879"
+  #  lightest_color = "#fff"
+  #  primary_color = "#dad865"
 
   # Red theme
   #[params.style]
-  #  darkestColor = "#d35050"
-  #  darkColor = "#212121"
-  #  lightColor = "#d6d6d6"
-  #  lightestColor = "#d3d3d3"
-  #  primaryColor = "#ffffff"
+  #  darkest_color = "#d35050"
+  #  dark_color = "#212121"
+  #  light_color = "#d6d6d6"
+  #  lightest_color = "#d3d3d3"
+  #  primary_color = "#ffffff"
