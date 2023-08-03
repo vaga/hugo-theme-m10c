@@ -1,5 +1,9 @@
 {{ define "main" }}
   <article>
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+    <!--
     <h1>{{ .Title }}</h1>
     <ul class="posts-list">
       {{ range where .Paginator.Pages "Type" "!=" "page" }}
@@ -18,6 +22,7 @@
         </li>
       {{ end }}
     </ul>
+    -->
     {{ partial "pagination.html" $ }}
   </article>
 {{ end }}
