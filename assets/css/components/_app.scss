@@ -1,14 +1,24 @@
 .app-header {
-  padding: 2.5em;
+  padding: 1.5em;
   background: $darkest-color;
   text-align: center;
+  float: left;
+  width: 100%;
+}
+
+.app-header-avatar-container {
+  text-align: left;
+  vertical-align: center;
+  width: 5rem;
+  margin-right: 1rem;
+  float: left;
 }
 
 .app-header-avatar {
-  width: 15rem;
-  height: 15rem;
+  width: 5rem;
+  height: 5rem;
   border-radius: 100%;
-  border: 0.5rem solid $primary-color;
+  border: 0.2rem solid $primary-color;
 }
 
 .app-container {
@@ -27,11 +37,14 @@
   }
 }
 
+.app-header-title-menu-container {
+  float: left;
+}
+
 .app-header-title {
   color: $lightest-color;
   display: block;
   font-size: 2em;
-  margin: 0.67em 0;
   font-weight: bold;
 }
 
@@ -42,11 +55,31 @@
     left: 0;
     width: 20rem;
     min-height: 100vh;
+    padding: 2.5rem;
+  }
+
+  .app-header-avatar {
+    width: 15rem;
+    height: 15rem;
+    border-radius: 100%;
+    border: 0.5rem solid $primary-color;
+  }
+
+  .app-header-title {
+    margin: 0.67em 0;
   }
 
   .app-container {
     max-width: 65rem;
     margin-left: 20rem;
+  }
+
+  .app-header-title-menu-container {
+    width: 100%;
+  }
+
+  .app-header-description {
+    margin: 1rem;
   }
 }
 
