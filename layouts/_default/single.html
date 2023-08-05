@@ -24,6 +24,9 @@
           {{- end }}
         </div>
         {{- end }}
+        {{ if .Params.ao3_link }}
+          <div><a href="{{ .Params.ao3_link }}" target="_blank" class="external">Archives of Our Own</a> </div>
+        {{ end }}
       </div>
       {{- end }}
     </header>
