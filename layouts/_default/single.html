@@ -14,16 +14,18 @@
           {{ .ReadingTime }} min read
         </div>
         {{ end }}
+        {{ if not .Site.Params.disableTagsInHeader }}
         {{- with .Params.tags }}
         <div>
           {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
           {{- range . -}}
-            {{ with $.Site.GetPage (printf "/%s/%s" "tags" . ) }}
+            {{ with $.Site.GetPage (printf "/tags/%s" . ) }}
               <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
             {{- end }}
           {{- end }}
         </div>
         {{- end }}
+        {{ end }}
         {{ if .Params.ao3_link }}
           <div><a href="{{ .Params.ao3_link }}" target="_blank" class="external">Archives of Our Own</a> </div>
         {{ end }}
