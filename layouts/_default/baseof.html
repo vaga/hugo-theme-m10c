@@ -27,45 +27,49 @@
 
   </head>
   <body>
-    <header>
-      <div class="app-header">
-      <div class="app-header-avatar-container">
-        <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
-      </div>
-      <div class="app-header-title-menu-container">
-        <span class="app-header-title">{{ .Site.Title }}</span>
-        {{- with .Site.Menus.main }}
-        <nav class="app-header-menu">
-          {{- range $key, $item := . }}
-            {{- if ne $key 0 }}
-              {{ $.Site.Params.menu_item_separator | default " - " | safeHTML }}
-            {{ end }}
-            <a class="app-header-menu-item" href="{{ $item.URL }}">{{ $item.Name }}</a>
-          {{- end }}
-        </nav>
-        {{- end }}
-        <div class="app-header-description">
-          {{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}
+    <div class="app-flex-wrapper">
+      <header>
+        <div class="app-header">
+        <div class="app-header-avatar-container">
+          <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
         </div>
+        <div class="app-header-title-menu-container">
+          <span class="app-header-title">{{ .Site.Title }}</span>
+          {{- with .Site.Menus.main }}
+          <nav class="app-header-menu">
+            {{- range $key, $item := . }}
+              {{- if ne $key 0 }}
+                {{ $.Site.Params.menu_item_separator | default " - " | safeHTML }}
+              {{ end }}
+              <a class="app-header-menu-item" href="{{ $item.URL }}">{{ $item.Name }}</a>
+            {{- end }}
+          </nav>
+          {{- end }}
+          <div class="app-header-description">
+            {{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}
+          </div>
+        </div>
+        {{- with .Site.Params.social }}
+        <div class="app-header-social">
+          {{ range . }}
+            <a href="{{ .url }}" target="_blank" rel="noreferrer noopener me">
+              {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
+            </a>
+          {{ end }}
+        </div>
+        {{- end }}
       </div>
-      {{- with .Site.Params.social }}
-      <div class="app-header-social">
-        {{ range . }}
-          <a href="{{ .url }}" target="_blank" rel="noreferrer noopener me">
-            {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
-          </a>
+      </header>
+
+      <main class="app-container">
+        {{ block "main" . }}
+          {{ .Content }}
         {{ end }}
-      </div>
-      {{- end }}
+      </main>
+
+      <footer class="app-footer">
+        {{ partial "footer.html" . }}
+      </footer>
     </div>
-    </header>
-    <main class="app-container">
-      {{ block "main" . }}
-        {{ .Content }}
-      {{ end }}
-    </main>
-    <footer  class="app-footer">
-      {{ partial "footer.html" . }}
-    </footer>
   </body>
 </html>

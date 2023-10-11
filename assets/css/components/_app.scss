@@ -8,15 +8,14 @@
 
 .app-header-avatar-container {
   text-align: left;
-  vertical-align: center;
   width: 5rem;
   margin-right: 1rem;
   float: left;
 }
 
 .app-header-avatar {
-  width: 5rem;
-  height: 5rem;
+  width: 6rem;
+  height: 6rem;
   border-radius: 100%;
   border: 0.2rem solid $primary-color;
 }
@@ -38,7 +37,8 @@
 }
 
 .app-header-title-menu-container {
-  float: left;
+  float: none;
+  width: 100%;
 }
 
 .app-header-title {
@@ -46,6 +46,13 @@
   display: block;
   font-size: 2em;
   font-weight: bold;
+}
+
+.app-flex-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @media (min-width: 940px) {
@@ -75,7 +82,7 @@
   }
 
   .app-header-title-menu-container {
-    width: 100%;
+    float: left;
   }
 
   .app-header-description {
@@ -86,7 +93,7 @@
 .app-footer {
   background: $darkest-color;
   text-align: center;
-  position: fixed;
   bottom: 0;
   width: 100%;
+  z-index: 10;
 }
