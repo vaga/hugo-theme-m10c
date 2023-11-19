@@ -3,7 +3,10 @@
 }
 
 .post-meta > div {
+  display: flex;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2em;
   font-size: 0.8em;
 
   > .icon {
