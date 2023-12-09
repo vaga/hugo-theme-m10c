@@ -1,5 +1,9 @@
 {{ define "main" }}
   <article>
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+    {{ if not .Site.Params.noList }}
     <h1>{{ .Title }}</h1>
     <ul class="posts-list">
       {{ range where .Paginator.Pages "Type" "!=" "page" }}
@@ -8,13 +12,17 @@
           <span class="posts-list-item-description">
             {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
             {{ .PublishDate.Format "Jan 2, 2006" }}
+
+            {{ if not .Site.Params.noreadingtime }}
             <span class="posts-list-item-separator">-</span>
             {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
             {{ .ReadingTime }} min read
+            {{ end }}
           </span>
         </li>
       {{ end }}
     </ul>
     {{ partial "pagination.html" $ }}
+    {{ end }}
   </article>
 {{ end }}
