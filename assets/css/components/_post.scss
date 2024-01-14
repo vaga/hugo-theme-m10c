@@ -2,6 +2,18 @@
   color: $lightest-color;
 }
 
+.post-meta > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2em;
+  font-size: 0.8em;
+
+  > .icon {
+    margin-right: 0.4em;
+  }
+}
+
 .post-content {
   & > pre,
   .highlight {
@@ -12,14 +24,21 @@
   .highlight > pre,
   .highlight > div {
     border-left: 0.4em solid rgba($primary-color, .8);
+    padding: 1em 1em;
+  }
+
+  blockquote {
+    border-left: 0.4em solid rgba($primary-color, .8);
+    margin: 1em 0em;
     padding: .5em 1em;
+    background: $darkest-color;
+
+    p {
+      margin: .5em 0;
+    }
   }
 
   img {
     max-width: 100%;
   }
-}
-
-.post-meta {
-  font-size: 0.8em;
 }

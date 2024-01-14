@@ -6,9 +6,11 @@
         <li class="posts-list-item">
           <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
           <span class="posts-list-item-description">
-            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}&ensp;{{ .PublishDate.Format .Site.Params.date_format }}
-            &ensp;-&ensp;
-            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}&ensp;{{ .ReadingTime }} min read
+            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+            {{ .PublishDate.Format "Jan 2, 2006" }}
+            <span class="posts-list-item-separator">-</span>
+            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+            {{ .ReadingTime }} min read
           </span>
         </li>
       {{ end }}

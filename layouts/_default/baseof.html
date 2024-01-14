@@ -8,10 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
-    {{ $sass := resources.Get "css/main.scss" }}
-    {{ $style := $sass | resources.ToCSS }}
-    <!-- {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}} -->
-    <link rel="stylesheet" href="{{ $style.Permalink }}" />
+    {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
+    <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
+    {{ with .OutputFormats.Get "rss" -}}
+    {{ printf `<link rel=%q type=%q href=%q title=%q>` .Rel .MediaType.Type .Permalink site.Title | safeHTML }}
+    {{ end }}
 
     {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/twitter_cards.html" . }}
@@ -21,7 +22,7 @@
   <body>
     <header class="app-header">
       <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
-      <h1>{{ .Site.Title }}</h1>
+      <span class="app-header-title">{{ .Site.Title }}</span>
       {{- with .Site.Menus.main }}
       <nav class="app-header-menu">
         {{- range $key, $item := . }}
@@ -33,11 +34,15 @@
       </nav>
       {{- end }}
       <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
+      {{- with .Site.Params.social }}
       <div class="app-header-social">
-        {{ range .Site.Params.social }}
-          <a target="_blank" href="{{ .url }}" rel="noreferrer noopener">{{ partial "icon.html" (dict "ctx" $ "name" .name ) }}</a>
+        {{ range . }}
+          <a href="{{ .url }}" target="_blank" rel="noreferrer noopener me">
+            {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
+          </a>
         {{ end }}
       </div>
+      {{- end }}
     </header>
     <main class="app-container">
       {{ block "main" . }}

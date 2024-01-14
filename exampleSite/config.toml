@@ -2,49 +2,58 @@ baseURL = "https://example.com"
 title = "Your title"
 themesDir = "../.."
 theme = "m10c"
-paginate = 5
+paginate = 8
 
 [menu]
   [[menu.main]]
     identifier = "home"
     name = "Home"
     url = "/"
+    weight = 1
   [[menu.main]]
     identifier = "tags"
     name = "Tags"
     url = "/tags/"
+    weight = 2
+  [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 3
 
 [params]
   author = "John Doe"
-  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium."
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   menu_item_separator = " - "
   [[params.social]]
-    name = "github"
+    icon = "github"
+    name = "Github"
     url = "https://github.com/gohugoio"
   [[params.social]]
-    name = "twitter"
+    icon = "twitter"
+    name = "Twitter"
     url = "https://twitter.com/gohugoio"
 
-  # Brown theme
+  # Default theme
   #[params.style]
-  #  darkestColor = "#463625"
-  #  darkColor = "#2a3738"
-  #  primaryColor = "#eeee6a"
-  #  lightColor = "#96a879"
+  #  darkestColor = "#242930"
+  #  darkColor = "#353b43"
+  #  lightColor = "#afbac4"
   #  lightestColor = "#ffffff"
+  #  primaryColor = "#57cc8a"
 
   # Green theme
   #[params.style]
   #  darkestColor = "#315659"
   #  darkColor = "#253031"
-  #  primaryColor = "#dad865"
   #  lightColor = "#96a879"
   #  lightestColor = "#fff"
+  #  primaryColor = "#dad865"
 
-  # Red and black theme
+  # Red theme
   #[params.style]
   #  darkestColor = "#d35050"
   #  darkColor = "#212121"
-  #  primaryColor = "#ffffff"
-  #  lightColor = "#a2a2a2"
+  #  lightColor = "#d6d6d6"
   #  lightestColor = "#d3d3d3"
+  #  primaryColor = "#ffffff"

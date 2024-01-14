@@ -4,6 +4,17 @@
 
 A Hugo minimalistic theme for bloggers
 
+Main features:
+
+- Fully responsive
+- Twitter Cards, Open Graph, Disqus and Google Analytics supported (see Hugo docs)
+- Customizable colors
+- Customizable picture and description
+- Customizable menu on sidebar
+- Customizable social media links on sidebar
+- Optimized for performance 100/100 on Lighthouse
+- All feather icons included
+
 ## Getting started
 
 ### Installation
@@ -49,7 +60,8 @@ To add a social link, add the following lines in `params`:
 
 ```
 [[params.social]]
-  name = "github"
+  icon = "github"
+  name = "My Github"
   url = "https://github.com/vaga"
 ```
 
@@ -61,16 +73,16 @@ To change theme colors, add the following lines in `params`:
   darkColor = "#212121"
   lightColor = "#f5e3e0"
   lightestColor = "#f5f5f5"
-  primaryColor = "#fff"
+  primaryColor = "#ffffff"
 ```
 
 If you want the above theme colors, you can see the [exampleSite/config.toml](/exampleSite/config.toml) file.
 
 ### Styling
 
-To override styles using scss, add a file called `_extra.scss` to `{your site directory}/assets/css/`
+To override styles using scss, add a file called `_extra.scss` to `[path]/assets/css/`
 
-Note: Hugo releases come in two versions, `hugo` and `hugo_extended`. You need `hugo_extended` to automatically compile your scss.
+**Note:** Hugo releases come in two versions, `hugo` and `hugo_extended`. You need `hugo_extended` to automatically compile your scss.
 
 ## License
 

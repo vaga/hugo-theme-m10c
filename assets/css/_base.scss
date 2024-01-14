@@ -34,7 +34,13 @@ a {
 code {
   font-family: monospace,monospace;
   font-size: 1em;
-  color: #ff79c6;
+  color: rgba($light-color, .8);
+
+  // Fixes iOS font sizing anomaly
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 pre {
@@ -48,7 +54,6 @@ pre {
   // reason using a smaller monospaced font size makes sense in this situation.
   code {
     font-size: .8em;
-    color: #f8f8f2;
   }
 }
 

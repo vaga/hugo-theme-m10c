@@ -8,7 +8,7 @@ git clone --depth=1 git@github.com:feathericons/feather.git $FEATHER_PATH
 pushd $FEATHER_PATH
 
 # Install dependencies
-yarn
+yarn install
 
 mkdir dist
 
