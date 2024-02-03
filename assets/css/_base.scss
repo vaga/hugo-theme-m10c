@@ -58,6 +58,16 @@ pre {
   }
 }
 
+table {
+  border-collapse: collapse;
+  border: 1px solid lighten($dark-color, 15%);
+
+  th, td {
+    border: 1px solid lighten($dark-color, 15%);
+    padding: 5px
+  }
+}
+
 ::selection {
   background: rgba($light-color, .25);
 }
