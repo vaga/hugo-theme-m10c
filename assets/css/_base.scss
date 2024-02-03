@@ -13,9 +13,6 @@ body {
   color: $light-color;
 }
 
-h1, h2, h3, h4, h5, h6 {
-  color: $lightest-color;
-}
 
 a {
   color: $primary-color;
@@ -33,8 +30,18 @@ a {
 // the very noticeable difference in x-height). This CSS corrects that problem.
 code {
   font-family: monospace,monospace;
-  font-size: 1em;
-  color: #ff79c6;
+  font-size: 0.8em;
+  color: rgba($light-color, .8);
+  background-color: $code-background-color;
+
+  padding: 3px; // Added padding
+  border-radius: 8px; // Added border radius
+
+  // Fixes iOS font sizing anomaly
+  text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 pre {
@@ -48,7 +55,6 @@ pre {
   // reason using a smaller monospaced font size makes sense in this situation.
   code {
     font-size: .8em;
-    color: #f8f8f2;
   }
 }
 

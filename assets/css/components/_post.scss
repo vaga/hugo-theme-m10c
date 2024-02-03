@@ -2,6 +2,59 @@
   color: $lightest-color;
 }
 
+h1, h2, h3, h4, h5, h6 {
+  color: $lightest-color;
+  position: relative;
+
+  .header-link {
+    color: inherit; // Keep the header color
+    text-decoration: none; // Remove underline from link
+    display: inline-block; // Ensure proper layout
+
+    &::before {
+      content: '#';
+      color: $link-color;
+      text-decoration: none;
+      visibility: hidden;
+      position: absolute;
+      left: -20px;
+      width: 20px; // Adjust if needed
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+
+  &:hover .header-link::before,
+  .header-link:hover::before {
+    visibility: visible;
+  }
+}
+
+h1 {
+  border-bottom: 1px solid $lightest-color;
+  padding-bottom: 8px;
+
+  // Specific style for 'post-title' class to remove underline
+  &.post-title, &.posts-title {
+    border-bottom: none;
+    padding-bottom: 0;
+    font-size: 200%;
+  }
+
+}
+
+.post-meta > div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.2em;
+  font-size: 0.8em;
+
+  > .icon {
+    margin-right: 0.4em;
+  }
+}
+
 .post-content {
   & > pre,
   .highlight {
@@ -12,14 +65,21 @@
   .highlight > pre,
   .highlight > div {
     border-left: 0.4em solid rgba($primary-color, .8);
+    padding: 1em 1em;
+  }
+
+  blockquote {
+    border-left: 0.4em solid rgba($primary-color, .8);
+    margin: 1em 0em;
     padding: .5em 1em;
+    background: $darkest-color;
+
+    p {
+      margin: .5em 0;
+    }
   }
 
   img {
     max-width: 100%;
   }
-}
-
-.post-meta {
-  font-size: 0.8em;
 }
