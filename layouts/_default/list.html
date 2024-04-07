@@ -1,7 +1,13 @@
 {{ define "main" }}
   <article>
     <h1>{{ .Title }}</h1>
+
+    <div class="post-content">
+      {{ .Content }}
+    </div>
+
     <ul class="posts-list">
+      <hr>
       {{ range where .Paginator.Pages "Type" "!=" "page" }}
         <li class="posts-list-item">
           <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>

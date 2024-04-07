@@ -2,13 +2,15 @@
   padding: 2.5em;
   background: $darkest-color;
   text-align: center;
+  border-radius: 20px;
+  margin: 10px;
 }
 
 .app-header-avatar {
   width: 15rem;
   height: 15rem;
-  border-radius: 100%;
-  border: 0.5rem solid $primary-color;
+  border-radius: 10%;
+  border: 0.2rem solid $primary-color;
 }
 
 .app-container {
@@ -41,7 +43,7 @@
     top: 0;
     left: 0;
     width: 20rem;
-    min-height: 100vh;
+    min-height: 97vh;
   }
 
   .app-container {
