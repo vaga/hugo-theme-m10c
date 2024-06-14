@@ -1,0 +1,27 @@
+{{ $images := .Get "images" | default "" }}
+
+{{ $imageList := slice }}
+{{ range (split $images ",") }}
+  {{ $imageData := split . "|" }}
+  {{ $image := dict "path" (index $imageData 0) "title" (index $imageData 1) "alt" (index $imageData 2) }}
+  {{ $imageList = $imageList | append $image }}
+{{ end }}
+
+<ul class="image-gallery">
+  {{ range $imageList }}
+    {{ $alt := .alt }}
+    {{ $title := .title }}
+    {{ $resource := $.Page.Resources.GetMatch (printf "**/%s" .path) }}
+    {{ if $resource }}
+      {{ $tiny := $resource.Fill "300x300 q50 webp" }}
+      <li>
+        <a href="{{ $resource.RelPermalink }}" title="{{ $title }}" class="lightbox-image">
+          <img src="{{ $tiny.RelPermalink }}" alt="{{ $alt }}" title="{{ $title }}">
+          <span>{{ $title }}</span>
+        </a>
+      </li>
+    {{ else }}
+      <li>Error: Image {{ .path }} not found. Please check the path.</li>
+    {{ end }}
+  {{ end }}
+</ul>

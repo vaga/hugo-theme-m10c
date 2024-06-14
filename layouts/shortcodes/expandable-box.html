@@ -1,0 +1,9 @@
+<div class="expandable-box">
+    <div class="expandable-header" onclick="toggleExpand(this)">
+        <span>{{ .Get 0 }}</span>
+        <span class="arrow">&#9654;</span>
+    </div>
+    <div class="expandable-content">
+        {{ .Inner }}
+    </div>
+</div>

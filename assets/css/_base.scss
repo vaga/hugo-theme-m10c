@@ -68,9 +68,164 @@ table {
   }
 }
 
+.expandable-box {
+    max-width: 400px;
+    border: 1px solid $light-color;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 20px;
+    
+    .expandable-header {
+        background-color: $darkest-color;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+
+        .arrow {
+            transition: transform 0.3s;
+            &.down {
+                transform: rotate(90deg);
+            }
+        }
+    }
+
+    .expandable-content {
+        display: none;
+        padding: 10px;
+        background-color: $darkest-color;
+    }
+}
+
+
+.ski-stats-container {
+    display: flex;
+    // justify-content: center;
+    margin: 20px 0;
+}
+
+.ski-stats-table {
+    border-collapse: collapse;
+    text-align: center;
+    border: none;
+
+    td {
+        padding: 0 10px; // Horizontal padding only
+        border: none; // Remove borders
+    }
+}
+
+.ski-stats-title {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.ski-stats-value {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+h2 {
+    color: lighten($primary-color, 35%) !important;
+    position: relative;
+    margin-bottom: 1.5em; // Adjust as needed for spacing
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px; // Adjust thickness of the hr
+        background-color: lighten($primary-color, 35%) !important; // Adjust color of the hr
+        margin-top: 0.5em; // Adjust as needed for spacing
+    }
+}
+
+h3 {
+    color: lighten($primary-color, 25%) !important; // Change to desired color
+    font-size: 1.25em; // Change to desired font size
+    margin-bottom: 1em; // Optional: adjust spacing below the h3
+}
+
+h4 {
+    color: lighten($primary-color, 15%) !important; // Change to desired color
+    font-size: 1.1em; // Change to desired font size
+    margin-bottom: 1em; // Optional: adjust spacing below the h3
+}
+
 ::selection {
   background: rgba($light-color, .25);
 }
 ::-moz-selection {
   background: rgba($light-color, .25);
+}
+
+.image-gallery {
+  overflow: auto;
+  margin-left: -1% !important;
+
+  li {
+    float: left;
+    display: block;
+    margin: 0 0 1% 1%;
+    width: 19%;
+
+    a {
+      text-align: center;
+      text-decoration: none !important;
+      color: #777;
+
+      span {
+        display: block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        padding: 3px 0;
+        white-space: normal; // Allow text to wrap
+      }
+
+      img {
+        width: 100%;
+        display: block;
+      }
+    }
+  }
+}
+
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  z-index: 1000;
+
+  &.active {
+    display: flex;
+  }
+
+  img {
+    max-width: 90%;
+    max-height: 90%;
+  }
+
+  .title {
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
 }

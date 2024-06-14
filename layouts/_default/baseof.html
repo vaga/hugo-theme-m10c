@@ -49,5 +49,7 @@
         {{ .Content }}
       {{ end }}
     </main>
+  {{ $script := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
+  <script src="{{ $script.RelPermalink }}"></script>
   </body>
 </html>
