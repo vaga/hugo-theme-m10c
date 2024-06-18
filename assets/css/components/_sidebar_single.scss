@@ -13,11 +13,14 @@
     }
 
     .sidebar-toc {
-      margin-top: 2rem;
+      margin-top: 1em;
+      overflow-y: auto;
+      max-height: calc(100vh - 400px);
 
       ul {
         list-style: none;
         padding: 0;
+        margin-top: 0em;
 
         li {
           margin: 0;
@@ -55,6 +58,9 @@
           }
         }
       }
+    }
+    .sidebar-toc:hover {
+      overflow-y: auto;
     }
   }
 
