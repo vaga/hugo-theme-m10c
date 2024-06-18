@@ -1,8 +1,37 @@
 document.addEventListener("DOMContentLoaded", () => {
+    initLightbox();
+    wrapHeadersWithLinks();
+    setupExpandableBoxes();
+    setupSidebarTOC();
+});
+
+function initLightbox() {
     const galleryItems = document.querySelectorAll(".lightbox-image");
+    const lightbox = createLightbox();
+
+    galleryItems.forEach(item => {
+        item.addEventListener("click", e => {
+            e.preventDefault();
+            const imgSrc = item.getAttribute("href");
+            const imgTitle = item.getAttribute("title");
+            updateLightbox(lightbox, imgSrc, imgTitle);
+        });
+    });
+
+    lightbox.querySelector(".close").addEventListener("click", () => {
+        lightbox.classList.remove("active");
+    });
+
+    lightbox.addEventListener("click", e => {
+        if (e.target.tagName !== "IMG" && e.target.className !== "title") {
+            lightbox.classList.remove("active");
+        }
+    });
+}
+
+function createLightbox() {
     const lightbox = document.createElement("div");
     lightbox.classList.add("lightbox");
-    document.body.appendChild(lightbox);
 
     const title = document.createElement("div");
     title.classList.add("title");
@@ -16,45 +45,35 @@ document.addEventListener("DOMContentLoaded", () => {
     closeButton.classList.add("close");
     lightbox.appendChild(closeButton);
 
-    galleryItems.forEach((item) => {
-        item.addEventListener("click", (e) => {
-            e.preventDefault();
-            const imgSrc = item.getAttribute("href");
-            const imgTitle = item.getAttribute("title");
-            img.setAttribute("src", imgSrc);
-            title.innerText = imgTitle;
-            lightbox.classList.add("active");
-        });
-    });
+    document.body.appendChild(lightbox);
 
-    closeButton.addEventListener("click", () => {
-        lightbox.classList.remove("active");
-    });
+    return lightbox;
+}
 
-    lightbox.addEventListener("click", (e) => {
-        if (e.target !== img && e.target !== title) {
-            lightbox.classList.remove("active");
+function updateLightbox(lightbox, imgSrc, imgTitle) {
+    const img = lightbox.querySelector("img");
+    const title = lightbox.querySelector(".title");
+
+    img.setAttribute("src", imgSrc);
+    title.innerText = imgTitle;
+    lightbox.classList.add("active");
+}
+
+function wrapHeadersWithLinks() {
+    document.querySelectorAll("h2, h3, h4, h5, h6").forEach(header => {
+        if (header.id) {
+            const wrap = document.createElement("a");
+            wrap.href = `#${header.id}`;
+            wrap.classList.add("header-link");
+
+            while (header.firstChild) {
+                wrap.appendChild(header.firstChild);
+            }
+
+            header.appendChild(wrap);
         }
     });
-});
-
-document.addEventListener("DOMContentLoaded", function () {
-    document
-        .querySelectorAll("h2, h3, h4, h5, h6")
-        .forEach(function (header) {
-            if (header.id) {
-                var wrap = document.createElement("a");
-                wrap.href = "#" + header.id;
-                wrap.classList.add("header-link");
-
-                while (header.firstChild) {
-                    wrap.appendChild(header.firstChild);
-                }
-
-                header.appendChild(wrap);
-            }
-        });
-});
+}
 
 function toggleExpand(element) {
     const expandableBox = element.closest('.expandable-box');
@@ -62,57 +81,46 @@ function toggleExpand(element) {
     element.classList.toggle('expanded');
 }
 
-document.addEventListener("DOMContentLoaded", function () {
+function setupSidebarTOC() {
     const sidebarContent = document.querySelector(".sidebar-content");
 
-    // Check if sidebarContent exists and is visible
     if (sidebarContent && sidebarContent.offsetParent !== null) {
         const tocLinks = document.querySelectorAll(".sidebar-toc a");
-        const headings = Array.from(
-            document.querySelectorAll("h2, h3, h4, h5, h6"),
-        );
+        const headings = Array.from(document.querySelectorAll("h2, h3, h4, h5, h6"));
 
-        function activateLink(link) {
-            tocLinks.forEach((tocLink) => tocLink.classList.remove("active"));
-            if (link) {
-                link.classList.add("active");
-            }
-        }
+        window.addEventListener("scroll", () => markScrolledPastLinks(headings, tocLinks));
+        markScrolledPastLinks(headings, tocLinks);
 
-        function markScrolledPastLinks() {
-            let fromTop = window.scrollY + 10;
-
-            headings.forEach((heading, index) => {
-                const link = tocLinks[index];
-
-                if (link) {
-                    if (
-                        heading &&
-                        heading.offsetTop - 40 <= fromTop
-                    ) {
-                        activateLink(link);
-                    } else if (!heading && heading.offsetTop - 40 <= fromTop) {
-                        activateLink(link);
-                    }
-
-                    if (heading.offsetTop + heading.offsetHeight <= fromTop) {
-                        link.classList.add("scrolled-past");
-                    } else {
-                        link.classList.remove("scrolled-past");
-                    }
-                }
-            });
-        }
-
-        window.addEventListener("scroll", markScrolledPastLinks);
-        markScrolledPastLinks(); // Call once to set the initial state
-
-        // Ensure the clicked header is highlighted
-        tocLinks.forEach((link) => {
+        tocLinks.forEach(link => {
             link.addEventListener("click", function () {
-                activateLink(this);
+                activateLink(tocLinks, this);
             });
         });
     }
-});
+}
 
+function activateLink(tocLinks, link) {
+    tocLinks.forEach(tocLink => tocLink.classList.remove("active"));
+    if (link) {
+        link.classList.add("active");
+    }
+}
+
+function markScrolledPastLinks(headings, tocLinks) {
+    let fromTop = window.scrollY + 10;
+
+    headings.forEach((heading, index) => {
+        const link = tocLinks[index];
+
+        if (link) {
+            if (heading.offsetTop - 40 <= fromTop) {
+                activateLink(tocLinks, link);
+            }
+            if (heading.offsetTop + heading.offsetHeight <= fromTop) {
+                link.classList.add("scrolled-past");
+            } else {
+                link.classList.remove("scrolled-past");
+            }
+        }
+    });
+}
