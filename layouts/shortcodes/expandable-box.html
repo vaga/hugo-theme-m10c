@@ -1,7 +1,12 @@
-<div class="expandable-box">
+<div class="expandable-box" id="expandable-{{ .Get "title" }}">
     <div class="expandable-header" onclick="toggleExpand(this)">
-        <span>{{ .Get 0 }}</span>
-        <span class="arrow">&#9654;</span>
+        <div class="header-content">
+            <span class="header-title">{{ .Get "title" }}</span>
+            {{ with .Get "vert" }}
+                <span class="header-vert">{{ . }}</span>
+            {{ end }}
+        </div>
+        <div class="arrow"></div>
     </div>
     <div class="expandable-content">
         {{ .Inner }}

@@ -1,5 +1,6 @@
 .post-title {
   color: $lightest-color;
+  margin-bottom: 0.5em;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,6 +38,8 @@ h1 {
   // Specific style for 'post-title' class to remove underline
   &.post-title, &.posts-title {
     border-bottom: none;
+    padding-top: 0;
+    margin-top: 0;
     padding-bottom: 0;
     font-size: 200%;
   }
@@ -55,6 +58,13 @@ h1 {
   }
 }
 
+.highlight {
+  code {
+    padding: 0px;
+    border-radius: 0px;
+  }
+}
+
 .post-content {
   & > pre,
   .highlight {
@@ -64,7 +74,7 @@ h1 {
   & > pre,
   .highlight > pre,
   .highlight > div {
-    border-left: 0.4em solid rgba($primary-color, .8);
+    // border-left: 0.4em solid rgba($primary-color, .8);
     padding: 1em 1em;
   }
 

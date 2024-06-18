@@ -2,11 +2,11 @@
 <html lang="{{ .Site.LanguageCode | default "en-us" }}">
   <head>
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} // {{ .Site.Title }}{{ end }}</title>
-    <link rel="shortcut icon" href="{{ .Site.Params.favicon | default "/favicon.ico" }}" />
+    {{ partial "favicon.html" . }}
     <meta charset="utf-8" />
     {{ hugo.Generator }}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="author" content="{{ .Site.Params.author | default "John Doe" }}" />
+    <meta name="author" content="{{ .Site.Params.author }}" />
     <meta name="description" content="{{ if .IsHome }}{{ .Site.Params.description }}{{ else }}{{ .Description }}{{ end }}" />
     {{ $style := resources.Get "css/main.scss" | resources.ExecuteAsTemplate "css/main.scss" . | resources.ToCSS | resources.Minify | resources.Fingerprint -}}
     <link rel="stylesheet" href="{{ $style.RelPermalink }}" />
@@ -21,35 +21,21 @@
   </head>
   <body>
     <header class="app-header">
-      <a href="{{ .Site.BaseURL }}"><img class="app-header-avatar" src="{{ .Site.Params.avatar | default "avatar.jpg" | relURL }}" alt="{{ .Site.Params.author | default "John Doe" }}" /></a>
-      <span class="app-header-title">{{ .Site.Title }}</span>
-      {{- with .Site.Menus.main }}
-      <nav class="app-header-menu">
-        {{- range $key, $item := . }}
-          {{- if ne $key 0 }}
-            {{ $.Site.Params.menu_item_separator | default " - " | safeHTML }}
-          {{ end }}
-          <a class="app-header-menu-item" href="{{ $item.URL }}">{{ $item.Name }}</a>
-        {{- end }}
-      </nav>
-      {{- end }}
-      <p>{{ .Site.Params.description | default "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vehicula turpis sit amet elit pretium." }}</p>
-      {{- with .Site.Params.social }}
-      <div class="app-header-social">
-        {{ range . }}
-          <a href="{{ .url }}" target="_blank" rel="noreferrer noopener me">
-            {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
-          </a>
-        {{ end }}
-      </div>
-      {{- end }}
+      {{ if .IsHome }}
+        {{ partial "header-home.html" . }}
+      {{ else if or (not .IsPage) (eq .Layout "about") }}
+        {{ partial "header-alt.html" . }}
+      {{ else }}
+        {{ partial "header-single.html" . }}
+      {{ end }}
     </header>
     <main class="app-container">
       {{ block "main" . }}
         {{ .Content }}
       {{ end }}
+    {{ partial "footer.html" . }}
     </main>
-  {{ $script := resources.Get "js/main.js" | resources.Minify | resources.Fingerprint }}
-  <script src="{{ $script.RelPermalink }}"></script>
+    {{ $script := resources.Get "js/main.js" | resources.Fingerprint | resources.Minify }}
+    <script src="{{ $script.RelPermalink }}"></script>
   </body>
 </html>

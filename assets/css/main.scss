@@ -8,6 +8,9 @@ $muted-text-color: {{ .Site.Params.style.mutedTextColor | default "#57cc8a" }};
 $code-background-color: {{ .Site.Params.style.codeBackgroundColor | default "#343942"}};
 $link-color: {{ .Site.Params.style.linkColor | default "#2F81F7"}};
 
+$darken-factor: 0.5;
+$sidebar-width: 940px;
+
 @import 'base';
 
 @import 'components/app';
@@ -18,6 +21,11 @@ $link-color: {{ .Site.Params.style.linkColor | default "#2F81F7"}};
 @import 'components/posts_list';
 @import 'components/tag';
 @import 'components/tags_list';
+@import 'components/expandable_box';
+@import 'components/ski_stats';
+@import 'components/image_gallery';
+@import 'components/sidebar_single';
+@import 'components/footer';
 
 // The last 'extra' import can optionally be overridden on a per project
 // basis by creating a <HUGO_PROJECT>/assets/css/_extra.scss file.

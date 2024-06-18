@@ -1,0 +1,26 @@
+.ski-stats-container {
+    display: flex;
+    // justify-content: center;
+    margin: 20px 0;
+}
+
+.ski-stats-table {
+    border-collapse: collapse;
+    text-align: center;
+    border: none;
+
+    td {
+        padding: 0 10px; // Horizontal padding only
+        border: none; // Remove borders
+    }
+}
+
+.ski-stats-title {
+    font-size: 0.9em;
+    font-weight: normal;
+}
+
+.ski-stats-value {
+    font-size: 1.2em;
+    font-weight: bold;
+}

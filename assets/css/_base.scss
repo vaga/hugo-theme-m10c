@@ -68,62 +68,11 @@ table {
   }
 }
 
-.expandable-box {
-    max-width: 400px;
-    border: 1px solid $light-color;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 20px;
-    
-    .expandable-header {
-        background-color: $darkest-color;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-
-        .arrow {
-            transition: transform 0.3s;
-            &.down {
-                transform: rotate(90deg);
-            }
-        }
-    }
-
-    .expandable-content {
-        display: none;
-        padding: 10px;
-        background-color: $darkest-color;
-    }
-}
-
-
-.ski-stats-container {
-    display: flex;
-    // justify-content: center;
-    margin: 20px 0;
-}
-
-.ski-stats-table {
-    border-collapse: collapse;
-    text-align: center;
-    border: none;
-
-    td {
-        padding: 0 10px; // Horizontal padding only
-        border: none; // Remove borders
-    }
-}
-
-.ski-stats-title {
-    font-size: 0.9em;
-    font-weight: normal;
-}
-
-.ski-stats-value {
-    font-size: 1.2em;
-    font-weight: bold;
+h1 {
+    color: $lightest-color; // Change to desired color
+    font-size: 1.65em; // Change to desired font size
+    margin-bottom: 1em;
+    margin-top: 0em;
 }
 
 h2 {
@@ -144,13 +93,25 @@ h2 {
 h3 {
     color: lighten($primary-color, 25%) !important; // Change to desired color
     font-size: 1.25em; // Change to desired font size
-    margin-bottom: 1em; // Optional: adjust spacing below the h3
+    margin-bottom: 1em;
 }
 
 h4 {
     color: lighten($primary-color, 15%) !important; // Change to desired color
     font-size: 1.1em; // Change to desired font size
-    margin-bottom: 1em; // Optional: adjust spacing below the h3
+    margin-bottom: 1em;
+}
+
+h5 {
+    color: lighten($primary-color, 10%) !important; // Change to desired color
+    font-size: 1.0em; // Change to desired font size
+    margin-bottom: 1em;
+}
+
+h6 {
+    color: lighten($primary-color, 5%) !important; // Change to desired color
+    font-size: 1.0em; // Change to desired font size
+    margin-bottom: 1em;
 }
 
 ::selection {
@@ -158,119 +119,4 @@ h4 {
 }
 ::-moz-selection {
   background: rgba($light-color, .25);
-}
-
-.image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  gap: 1%;
-  justify-content: left;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-
-  li {
-    display: flex;
-    flex-direction: column;
-    align-items: center; // Center the content horizontally
-
-    a {
-      text-align: center;
-      text-decoration: none !important;
-      color: darken($lightest-color, 20);
-
-      span {
-        display: block;
-        text-overflow: ellipsis;
-        overflow: hidden;
-        padding: 3px 0;
-        white-space: normal; // Allow text to wrap
-      }
-
-      img {
-        max-width: 250px; // Ensure max width is 250px
-        height: auto;
-        display: block;
-      }
-    }
-  }
-}
-
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 1000;
-
-  &.active {
-    display: flex;
-  }
-
-  img {
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  .title {
-    color: white;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #fff;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
-}
-
-
-.lightbox {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  z-index: 1000;
-
-  &.active {
-    display: flex;
-  }
-
-  img {
-    max-width: 90%;
-    max-height: 90%;
-  }
-
-  .title {
-    color: white;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .close {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background: #fff;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-  }
 }

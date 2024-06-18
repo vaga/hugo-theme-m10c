@@ -1,0 +1,9 @@
+{{- with .Site.Params.social }}
+<div class="app-header-social">
+  {{ range . }}
+    <a href="{{ .url }}" target="_blank" rel="noreferrer noopener me">
+      {{ partial "icon.html" (dict "ctx" $ "name" .icon "title" .name) }}
+    </a>
+  {{ end }}
+</div>
+{{- end }}

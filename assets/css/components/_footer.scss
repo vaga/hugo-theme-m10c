@@ -1,0 +1,33 @@
+.site-footer {
+  padding: 2em 0;
+  text-align: center;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .footer-social {
+    margin-top: 10px;
+
+    a {
+      color: $primary-color;
+      margin: 0 10px;
+      transition: color 0.3s;
+
+      &:hover {
+        color: $light-color; /* Change this color to match the hover state you desire */
+      }
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+<footer class="site-footer">
+  <div class="container">
+    <p>&copy; {{ now.Format "2006" }} {{ .Site.Title }}. All rights reserved.</p>
+    {{ if and (.IsPage) (not (eq .Layout "about")) }}
+      {{ partial "socials.html" . }}
+    {{ end }}
+  </div>
+</footer>

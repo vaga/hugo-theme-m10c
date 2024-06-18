@@ -1,9 +1,3 @@
-.app-header {
-  padding: 2.5em;
-  background: $darkest-color;
-  text-align: center;
-}
-
 .app-header-avatar {
   width: 15rem;
   height: 15rem;
@@ -11,8 +5,15 @@
   border: 0.5rem solid $primary-color;
 }
 
+.app-header-avatar-home {
+  width: 15rem;
+  height: 15rem;
+  border-radius: 100%;
+  border: 0.5rem solid $primary-color;
+}
+
 .app-container {
-  padding: 2.5rem;
+  padding: 2rem;
 }
 
 .app-header-social {
@@ -27,7 +28,7 @@
   }
 }
 
-.app-header-title {
+.app-header-title  {
   color: $lightest-color;
   display: block;
   font-size: 2em;
@@ -35,8 +36,19 @@
   font-weight: bold;
 }
 
-@media (min-width: 940px) {
+.app-header-title-home {
+  color: $lightest-color;
+  display: block;
+  font-size: 2em;
+  margin: 0.67em 0;
+  font-weight: bold;
+}
+
+@media (min-width: $sidebar-width) {
   .app-header {
+    padding: 2em;
+    background: $darkest-color;
+    text-align: center;
     position: fixed;
     top: 0;
     left: 0;
@@ -48,4 +60,29 @@
     max-width: 65rem;
     margin-left: 20rem;
   }
+
+  .app-header-title {
+    margin-top: 0em;
+  }
+
+  .app-header-title-home {
+    margin-top: 0em;
+  }
+}
+
+@media (max-width: $sidebar-width) {
+  .app-header {
+    padding: 0.5em;
+    background: $darkest-color;
+    text-align: center;
+  }
+
+  .app-header-avatar {
+    display: none;
+  }
+
+  .app-header-title {
+    margin: 0em;
+  }
+
 }

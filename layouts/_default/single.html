@@ -38,16 +38,5 @@
     <div class="post-content">
       {{ .Content }}
     </div>
-    <div class="post-footer">
-      {{- with .Site.Params.utterences }}
-        <script src="https://utteranc.es/client.js"
-          repo="{{ .repo }}"
-          issue-term="{{ .issue_term | default "pathname" }}"
-          theme="{{ .theme | default "preferred-color-scheme" }}"
-          crossorigin="anonymous"
-          async>
-        </script>
-      {{ end }}
-    </div>
   </article>
 {{ end }}

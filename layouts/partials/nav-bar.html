@@ -1,0 +1,10 @@
+{{- with .Site.Menus.main }}
+<nav class="app-header-menu">
+  {{- range $key, $item := . }}
+    {{- if ne $key 0 }}
+      {{ $.Site.Params.menu_item_separator | default " - " | safeHTML }}
+    {{ end }}
+    <a class="app-header-menu-item" href="{{ $item.URL }}">{{ $item.Name }}</a>
+  {{- end }}
+</nav>
+{{- end }}

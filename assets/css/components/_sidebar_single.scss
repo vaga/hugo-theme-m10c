@@ -1,0 +1,72 @@
+.sidebar-single {
+  .sidebar-content {
+    .sidebar-top-links a {
+      display: block;
+      margin-bottom: 0.5rem;
+      text-align: left;
+      color: $lightest-color;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .sidebar-toc {
+      margin-top: 2rem;
+
+      ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+          margin: 0;
+          padding: 0.1rem 0;
+
+          a {
+            text-align: left;
+            text-decoration: none;
+            color: $lightest-color;
+            display: block;
+            padding-left: 0; // Base padding for top-level items
+
+            &:hover {
+              text-decoration: underline;
+            }
+
+            &.scrolled-past {
+              color: darken($lightest-color, 50%);
+            }
+
+            &.active {
+              // font-weight: bold;
+              color: $primary-color;
+              // Ensure active state overrides scrolled-past state
+              color: $primary-color !important;
+            }
+          }
+
+          ul {
+            padding-left: 1rem; // Indentation for nested items
+
+            li ul {
+              padding-left: 1.5rem; // Further indentation for deeper nested items
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: $sidebar-width) {
+    .app-header {
+      padding: 0px;
+      display: none;
+    }
+
+    .sidebar-content .sidebar-toc {
+      display: none;
+    }
+  }
+}
+
