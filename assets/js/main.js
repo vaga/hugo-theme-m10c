@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     initLightbox();
     wrapHeadersWithLinks();
-    setupExpandableBoxes();
     setupSidebarTOC();
 });
 
