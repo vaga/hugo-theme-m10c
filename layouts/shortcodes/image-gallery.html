@@ -16,7 +16,7 @@
       {{ $tiny := $resource.Fill "250x250 q50 webp" }}
       <li>
         <a href="{{ $resource.RelPermalink }}" title="{{ $title }}" class="lightbox-image">
-          <img src="{{ $tiny.RelPermalink }}" alt="{{ $alt }}" title="{{ $title }}">
+          <img src="{{ $tiny.RelPermalink }}" alt="{{ $alt }}" title="{{ $title }}" width=250px height=250px>
           <span>{{ $title }}</span>
         </a>
       </li>

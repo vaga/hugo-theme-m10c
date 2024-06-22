@@ -1,61 +1,65 @@
-.expandable-box {
-    max-width: 400px;
-    width: 100%;
-    border: 1px solid $light-color;
-    border-radius: 5px;
-    overflow: hidden;
-    margin: 20px; // Left align with padding
+.expandable {
+    margin-top: 1em;
+    margin-bottom: 1em;
 
-    .expandable-header {
-        background-color: $darkest-color;
-        color: $lightest-color;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
+    .expandable-box {
+        max-width: 400px;
+        width: 100%;
+        border: 1px solid $light-color;
+        border-radius: 5px;
+        overflow: hidden;
 
-        .header-content {
+        .expandable-header {
+            background-color: $darkest-color;
+            color: $lightest-color;
+            padding: 10px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
+            cursor: pointer;
+
+            .header-content {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                width: 100%;
+            }
+
+            .header-title {
+                font-size: 1.1em;
+                font-weight: bold;
+            }
+
+            .header-vert {
+                font-size: 0.9em;
+                font-weight: normal;
+                margin-left: auto; // Align to the right
+            }
+
+            .arrow {
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid $lightest-color;
+                margin-left: 10px;
+                transition: transform 0.3s;
+            }
+
+            &.expanded .arrow {
+                transform: rotate(90deg);
+            }
         }
 
-        .header-title {
-            font-size: 1.1em;
-            font-weight: bold;
+        .expandable-content {
+            display: none;
+            padding: 10px;
+            background-color: $darkest-color;
+            color: $lightest-color;
         }
 
-        .header-vert {
-            font-size: 0.9em;
-            font-weight: normal;
-            margin-left: auto; // Align to the right
+        &.expanded .expandable-content {
+            display: block;
         }
-
-        .arrow {
-            width: 0;
-            height: 0;
-            border-left: 5px solid transparent;
-            border-right: 5px solid transparent;
-            border-top: 5px solid $lightest-color;
-            margin-left: 10px;
-            transition: transform 0.3s;
-        }
-
-        &.expanded .arrow {
-            transform: rotate(90deg);
-        }
-    }
-
-    .expandable-content {
-        display: none;
-        padding: 10px;
-        background-color: $darkest-color;
-        color: $lightest-color;
-    }
-
-    &.expanded .expandable-content {
-        display: block;
     }
 }

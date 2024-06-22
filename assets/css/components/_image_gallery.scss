@@ -1,19 +1,24 @@
 .image-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 1%;
-  justify-content: left;
+  justify-content: flex-start; // Left-align the list elements
   margin: 0;
   padding: 0;
   list-style: none;
 
   li {
+    flex: 1 1 250px; // Flex item with a basis of 250px
+    max-width: 250px; // Ensure max width is 250px
+    box-sizing: border-box; // Include padding and border in the element's total width and height
+
     display: flex;
     flex-direction: column;
-    align-items: center; // Center the content horizontally
-
+    align-items: flex-start; // Align items to the start (left)
+    padding: 0.5em;
+    
     a {
-      text-align: center;
+      text-align: center; // Left-align text
       text-decoration: none !important;
       color: darken($lightest-color, 20);
 
@@ -23,10 +28,14 @@
         overflow: hidden;
         padding: 3px 0;
         white-space: normal; // Allow text to wrap
+        width: 100%;
+        box-sizing: border-box;
       }
 
       img {
         max-width: 250px; // Ensure max width is 250px
+        max-height: 250px; // Ensure max height is 250px
+        width: 100%;
         height: auto;
         display: block;
       }

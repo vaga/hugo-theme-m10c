@@ -70,7 +70,7 @@
   }
 }
 
-@media (max-width: $sidebar-width) {
+@media (max-width: $sidebar-width - 1px) {
   .app-header {
     padding: 0.5em;
     background: $darkest-color;
@@ -84,5 +84,4 @@
   .app-header-title {
     margin: 0em;
   }
-
 }
