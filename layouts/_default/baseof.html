@@ -37,5 +37,6 @@
     </main>
     {{ $script := resources.Get "js/main.js" | resources.Fingerprint | resources.Minify }}
     <script src="{{ $script.RelPermalink }}"></script>
+    {{ partial "goatcounter.html" . }}
   </body>
 </html>
