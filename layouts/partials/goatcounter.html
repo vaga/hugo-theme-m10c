@@ -1,8 +1,6 @@
 {{ with site.Params.goatcounter }}
-  {{ $counter := resources.Get "js/count.js" | resources.Fingerprint | resources.Minify }}
   {{ $countURL := printf "%s/count" . }}
-  <script type="module">
-    import { count } from {{ $counter.RelPermalink }};
-    count({{ $countURL }});
-  </script>
+  {{ $countScript := printf "%s/count.js" . }}
+  <script data-goatcounter={{ $countURL }}
+          async src={{ $countScript }}></script>
 {{ end }}
