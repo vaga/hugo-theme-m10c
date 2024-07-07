@@ -1,11 +1,10 @@
 {{ with site.Params.goatcounter }}
-  {{ $countURL := printf "%s/count" . }}
-  {{ $countScript := printf "%s/count.js" . }}
+  {{ $countScript := printf "%s.js" . }}
   <script>
       window.goatcounter = {
           path: function(p) { return location.host + p }
       }
   </script>
-  <script data-goatcounter={{ $countURL }}
+  <script data-goatcounter={{ . }}
           async src={{ $countScript }}></script>
 {{ end }}
