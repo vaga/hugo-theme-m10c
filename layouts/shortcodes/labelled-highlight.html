@@ -1,0 +1,13 @@
+{{ $filename := .Get "filename" }}
+{{ $lang := .Get "lang" }}
+{{ $options := .Get "options" }}
+{{ $input := (trim .Inner "\n\r") }}
+
+<div class="code-tab">
+  <div class="code-tab-header">
+    <strong>{{ $filename }}</strong>
+  </div>
+  <div class="code-content">
+    {{ highlight $input $lang $options }}
+  </div>
+</div>
