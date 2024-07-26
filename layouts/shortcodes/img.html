@@ -2,8 +2,13 @@
 {{ $alt := .Get "alt" }}
 {{ $title := .Get "title" | default $alt }}
 
-{{ $preview := $original.Resize "500x q50" }}
-
-<a href="{{ $original.RelPermalink }}" title="{{ $title }}" class="lightbox-image">
-  <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" title="{{ $title }}">
-</a>
+{{ if eq $original.MediaType.SubType "svg" }}
+  <a href="{{ $original.RelPermalink }}" title="{{ $title }}" class="lightbox-image">
+    <img src="{{ $original.RelPermalink }}" alt="{{ $alt }}" title="{{ $title }}">
+  </a>
+{{ else }}
+  {{ $preview := $original.Resize "500x q50" }}
+  <a href="{{ $original.RelPermalink }}" title="{{ $title }}" class="lightbox-image">
+    <img src="{{ $preview.RelPermalink }}" alt="{{ $alt }}" title="{{ $title }}">
+  </a>
+{{ end }}
