@@ -1,2 +1,3 @@
 public/
 exampleSite/resources/
+.hugo_build.lock
