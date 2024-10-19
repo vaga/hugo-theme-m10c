@@ -13,7 +13,7 @@ Main features:
 - Customizable menu on sidebar
 - Customizable social media links on sidebar
 - Optimized for performance 100/100 on Lighthouse
-- All feather icons included
+- All Feather and Simple Icons icons included
 
 ## Getting started
 
@@ -80,14 +80,13 @@ If you want the above theme colors, you can see the [exampleSite/config.toml](/e
 
 ### Icons
 
-This theme uses two libraries for icons.  
-**Feather Icons** is used for application-related icons, providing a clean and minimal design.  
-For brand icons, **Simple Icons** is used.
+This theme uses two libraries for icons:
+
+- [Feather](https://feathericons.com/) is used for application-related icons.
+- [Simple Icons](https://simpleicons.org) is used for brand icons.
 
 To differentiate brand icons from regular ones, the prefix `brand-` is added
-to all icons from the **Simple Icons** library (e.g., brand-github, brand-x, brand-mastodon).
-
-This helps keep the icons organized and easy to manage.
+to all icons from the Simple Icons library. (e.g., brand-github, brand-x, brand-mastodon...)
 
 ### Styling
 
