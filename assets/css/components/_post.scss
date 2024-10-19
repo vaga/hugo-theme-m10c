@@ -2,6 +2,11 @@
   color: $lightest-color;
 }
 
+.post-description {
+  color: $lightest-color;
+  font-style: italic;
+}
+
 .post-meta > div {
   display: flex;
   align-items: center;
