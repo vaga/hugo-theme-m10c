@@ -28,11 +28,15 @@ theme = "hugo-theme-m10c"
   description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   menu_item_separator = " - "
   [[params.social]]
-    icon = "github"
+    icon = "brand-github"
     name = "Github"
     url = "https://github.com/gohugoio"
   [[params.social]]
-    icon = "twitter"
+    icon = "brand-x"
+    name = "X"
+    url = "https://twitter.com/gohugoio"
+  [[params.social]]
+    icon = "brand-mastodon"
     name = "Twitter"
     url = "https://twitter.com/gohugoio"
 

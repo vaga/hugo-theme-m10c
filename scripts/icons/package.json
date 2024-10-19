@@ -1,0 +1,10 @@
+{
+  "type": "module",
+  "scripts": {
+    "build": "node update_icons.js"
+  },
+  "dependencies": {
+    "feather-icons": "^4.29.2",
+    "simple-icons": "^13.14.0"
+  }
+}
