@@ -11,10 +11,17 @@ body {
   font-family: sans-serif;
   background: $dark-color;
   color: $light-color;
+  line-height: 1.3;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: $lightest-color;
+}
+
+.post-title, .posts-list-item-title{
+  font-size: 1.5em;
+  font-weight: 300;
+  line-height: 1.1;
 }
 
 a {
@@ -27,14 +34,27 @@ a {
   }
 }
 
+.btn{
+    background-color: #D9411E;
+    padding: .4em .6em;
+    font-size: .9em;
+    line-height: 1;
+    color: #fff;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+    text-align: center;
+}
+
 // Browsers seem to use a smaller default font-size with monospaced code
 // blocks (like 80% of the size of normal text) and that looks pretty bad with
 // small inline code-blocks in the middle of normal text (mainly because of
 // the very noticeable difference in x-height). This CSS corrects that problem.
 code {
   font-family: monospace,monospace;
-  font-size: 1em;
-  color: rgba($light-color, .8);
+  font-size: .8em;
+  //background-color: light-grey;
+  padding-left: 0.5em;
 
   // Fixes iOS font sizing anomaly
   text-size-adjust: 100%;
@@ -48,13 +68,16 @@ pre {
   line-height: 1.2em;
   margin: 0;
   overflow: auto;
-
-  // A larger monospaced block of text (that isn't mixed with normal text)
-  // generally looks heavier than normal text with the same font size. For this
-  // reason using a smaller monospaced font size makes sense in this situation.
-  code {
-    font-size: .8em;
+  code{
+    display:block
   }
+}
+
+hr {
+    background-color: #eee;
+    height: 1px;
+    border: none;
+    margin: 0 0.5em 0 0.5em
 }
 
 ::selection {

@@ -1,0 +1,20 @@
+    <div class="post-meta">
+    <div>
+        {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
+        {{ .PublishDate.Format "Jan 2, 2006" }}
+    </div>
+    <div>
+        {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
+        {{ .ReadingTime }} min read
+    </div>
+    {{- with .Params.tags }}
+    <div>
+        {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
+        {{- range . -}}
+        {{ with $.Site.GetPage (printf "/%s/%s" "tags" . ) }}
+            <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
+        {{- end }}
+        {{- end }}
+    {{- end }}
+    </div>
+    </div>
