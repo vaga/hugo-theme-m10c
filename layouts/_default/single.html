@@ -2,34 +2,16 @@
   <article class="post">
     <header class="post-header">
       <h1 class ="post-title">{{ .Title }}</h1>
-      {{- if ne .Type "page" }}
       <div class="post-meta">
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
-          {{ .PublishDate.Format "Jan 2, 2006" }}
-        </div>
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
-          {{ .ReadingTime }} min read
-        </div>
-        {{- with .Params.tags }}
-        <div>
-          {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
-          {{- range . -}}
-            {{ with $.Site.GetPage (printf "/%s/%s" "tags" . ) }}
-              <a class="tag" href="{{ .Permalink }}">{{ .Title }}</a>
-            {{- end }}
-          {{- end }}
-        </div>
-        {{- end }}
+        {{ partial "meta.html" . }}
       </div>
-      {{- end }}
     </header>
     <div class="post-content">
       {{ .Content }}
     </div>
     <div class="post-footer">
       {{ template "_internal/disqus.html" . }}
+      {{ partial "related.html" .  }}
     </div>
   </article>
 {{ end }}

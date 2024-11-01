@@ -2,3 +2,4 @@ public/
 exampleSite/resources/
 .hugo_build.lock
 node_modules/
+resources/_gen

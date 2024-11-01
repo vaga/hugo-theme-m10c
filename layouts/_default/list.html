@@ -1,17 +1,13 @@
 {{ define "main" }}
   <article>
-    {{ with .Title -}}<h1>{{- . -}}</h1>{{- end }}
     {{ with .Content -}}<div class="post-content">{{- . -}}</div>{{- end }}
     <ul class="posts-list">
-      {{ range where .Paginator.Pages "Type" "!=" "page" }}
+      {{ range .Paginator.Pages.ByDate.Reverse }}
         <li class="posts-list-item">
-          <a class="posts-list-item-title" href="{{ .Permalink }}">{{ .Title }}</a>
+          <h2><a class="posts-list-item-title" href="{{ .RelPermalink }}">{{ .Title }}</a></h2>
+          {{ partial "preview.html" .}}
           <span class="posts-list-item-description">
-            {{ partial "icon.html" (dict "ctx" $ "name" "calendar") }}
-            {{ .PublishDate.Format "Jan 2, 2006" }}
-            <span class="posts-list-item-separator">-</span>
-            {{ partial "icon.html" (dict "ctx" $ "name" "clock") }}
-            {{ .ReadingTime }} min read
+            {{ partial "meta.html" .}}
           </span>
         </li>
       {{ end }}

@@ -6,9 +6,19 @@
   list-style: none;
   padding: 0.4em 0;
 
+
   &:not(:last-child) {
     border-bottom: 1px dashed rgba(255, 255, 255, 0.3);
   }
+}
+
+li.posts-list-item:after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 90%;
+  margin: 10px;
+  background: #ddd;
 }
 
 .posts-list-item-description {
@@ -19,6 +29,10 @@
   > .icon {
     margin-right: 0.4em;
   }
+}
+
+.posts-list-item-title {
+  color: $lightest-color
 }
 
 .posts-list-item-separator {
