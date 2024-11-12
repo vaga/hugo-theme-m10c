@@ -14,6 +14,13 @@
   }
 }
 
+.post-banner {
+  object-fit: cover;
+  height: 30vh;
+  width: 100%;
+  border: none;
+}
+
 .post-content {
   & > pre,
   .highlight {
