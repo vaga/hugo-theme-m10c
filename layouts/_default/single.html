@@ -29,6 +29,7 @@
       {{ .Content }}
     </div>
     <div class="post-footer">
+      {{ partial "post_footer" . }}
       {{ template "_internal/disqus.html" . }}
     </div>
   </article>
