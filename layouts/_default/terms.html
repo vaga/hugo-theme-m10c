@@ -5,7 +5,7 @@
       {{ range .Data.Terms.ByCount }}
         <li class="tags-list-item">
             {{ partial "icon.html" (dict "ctx" $ "name" "tag") }}
-            <a class="tags-list-item-title" href="{{ .Page.Permalink }}">
+            <a class="tags-list-item-title" href="{{ .Page.RelPermalink }}">
               ({{ .Count }})
               {{ .Page.Title }}
             </a>
