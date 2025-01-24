@@ -1,6 +1,9 @@
 {{ define "main" }}
   <article class="post">
     <header class="post-header">
+      {{ if and (isset .Params "banner") (not (eq .Params.banner "")) }}
+      <img src="{{ .Params.banner | absURL }}" class="post-banner">
+      {{ end }}
       <h1 class ="post-title">{{ .Title }}</h1>
       {{- if ne .Type "page" }}
       <div class="post-meta">
